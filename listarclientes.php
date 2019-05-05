@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Listagem de Usuários</title>
+    <title>Listagem de Clientes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap/bootstrap.css">
@@ -16,16 +16,24 @@
         include("conexaobanco.php");
 
         $sql = "SELECT *
-                  FROM usuarios
-                 ORDER BY id_usuario";
+                  FROM clientes
+                 ORDER BY id_cliente";
     
     $conexao = new Conexao();
     
-    $usuarios = $conexao->execute($sql);
-
+    $clientes = $conexao->execute($sql);
     ?>
-    <h1>Usuários</h1>
+
+    <h1>Clientes</h1>
     <br>
+
+    <div class="text-center">
+    <label for="pesquisar">Pesquisar Usuário :</label>    
+    <input type="text">
+    </div>
+
+    <br>
+    
 
     <div class="tabela">
         <table class="table table-bordered">
@@ -33,23 +41,23 @@
                 <tr>
                     <th scope="col">ID</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">Usuário</th>
-                    <th scope="col">E-Mail</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Telefone</th>
                     <th scope="col">Ação</th>
                 </tr>
             </thead>
             <tbody>
-            <?php while($user = $usuarios->fetch_array()) { ?>
+                <?php while($cliente = $clientes->fetch_array()) { ?>
                 <tr>
-                    <th scope="row"><?php echo $user['id_usuario']; ?></th>
-                    <td><?php echo $user['nome']; ?></td>
-                    <td><?php echo $user['usuario']; ?></td>
-                    <td><?php echo $user['email']; ?></td>
+                    <th scope="row"><?php echo $cliente['id_cliente']; ?></th>
+                    <td><?php echo $cliente['nome']; ?></td>
+                    <td><?php echo $cliente['email']; ?></td>
+                    <td><?php echo $cliente['telefone']; ?></td>
                     <td>
-                    <a href="cadastrousuario.php?" class="btn btn-primary">Editar</a>
-                    <a href="excluirusuario.php?id=<?php echo $user['id_usuario']; ?>" class="btn btn-danger">Excluir</a>
+                    <a href="cadastroclientes.php?" class="btn btn-primary">Editar</a>
+                    <a href="excluirclientes.php?id=<?php echo $cliente['id_cliente']; ?>" class="btn btn-danger">Excluir</a>
                     </td>
-                    </tr>
+                </tr>
                 <?php } ?>
             </tbody>
         </table>

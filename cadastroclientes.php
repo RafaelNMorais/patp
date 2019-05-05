@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cadastro de Usuários</title>
+    <title>Cadastro de Clientes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap/bootstrap.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/estilomenu.css">
@@ -13,30 +13,30 @@
     <?php
         include("menu.php");
     ?>
-    <h1>Cadastro de Usuário</h1>
+    <h1>Cadastro de Clientes</h1>
         <br>
 
     <div class="cadastrousuario">
-        <form action="usuario_gravar.php" method="POST">
+        <form action="gravarclientes.php" method="POST">
             <div class="form-group">
                 <label for="nome">Nome :</label>
                 <input type="text" name="nome" class="form-control" id="Nome" placeholder="Digite seu nome" required>
             </div>
             <div class="form-group">
-                <label for="usuario">Usuário</label>
-                <input type="text" name="usuario" class="form-control" id="Usuario" placeholder="Digite seu usuário" required>
+                <label for="usuario">Senha</label>
+                <input type="password" name="senha" class="form-control" id="Senha" placeholder="Digite sua senha" required>
             </div>
             <div class="form-group">
                 <label for="email">E-Mail</label>
                 <input type="mail" name="email" class="form-control" id="Email" placeholder="Digite seu email" required>
             </div>
             <div class="form-group">
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" class="form-control" id="Senha" placeholder="Digite sua senha" required>
+                <label for="senha">Telefone</label>
+                <input type="number" name="telefone" class="form-control" id="Telefone" placeholder="Digite seu telefone" required>
             </div>
             <div class="text-center">
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="listarusuarios.php" class="btn btn-danger">Cancelar</a>
+            <a href="listarclientes.php" class="btn btn-danger">Cancelar</a>
             </div>
         </form>
     </div>
@@ -49,7 +49,6 @@
         </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-        </script>
-
+    </script>
 </body>
 </html>

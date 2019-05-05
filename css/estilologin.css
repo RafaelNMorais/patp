@@ -1,4 +1,33 @@
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1
+}
+
+
+.fundo {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1
+}
+
+.imglogin{
+    width: 100%;
+}
+
 .login {
-width: 100px;
-margin: 100px auto;
+    width: 300px;
+    margin: 200px auto auto;
+    z-index: 1;
+    background: #ffffff;
+    padding: 20px;
 }

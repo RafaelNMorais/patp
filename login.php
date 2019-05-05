@@ -8,6 +8,10 @@
 </head>
 <body>
     <div class="login">
+    <img src="imagens/FundoLogin.jpg" class="background" alt="">
+    <div class="fundo">
+    </div>
+    <img src="imagens/Logo.PNG" class="imglogin" alt="">
         <form>
             <div class="form-group">
                 <label for="email">Email</label>
